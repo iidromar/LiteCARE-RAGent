@@ -1,0 +1,65 @@
+data:
+  wesad_root: "data/raw/WESAD"
+  affectiveroad_root: "data/raw/AffectiveROAD_Data"
+  swell_root: "data/raw/SWELL"
+  empatica_root: "data/raw/EmpaticaE4Stress"
+  processed_dir: "data/processed"
+  target_fs: 32
+  bvp_channel_idx: 1
+
+preprocessing:
+  target_fs: 32
+  window_seconds: 60
+  window_samples: 1920
+  overlap: 0.5
+  step_samples: 960
+  n_channels: 4
+  label_strategy: "majority_vote"
+
+model:
+  input_channels: 4
+  num_classes: 2
+  tcn_blocks: 4
+  dilation_schedule: [1, 2, 4, 8]
+  kernel_size: 3
+  channels_per_layer: [64, 128, 128, 256]
+  se_reduction_ratio: 2
+  dropout_rate: 0.3
+  use_hrv: true
+
+training:
+  batch_size: 64
+  max_epochs: 150
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  scheduler: "cosine_warm_restarts"
+  scheduler_T0: 30
+  early_stopping_patience: 30
+  monitor_metric: "val_f1"
+  lambda_calib: 0.1
+  n_calib_bins: 15
+  focal_gamma: 1.5
+  label_smooth: 0.1
+  mixup_alpha: 0.0
+  swa_start_epoch: 15
+  swa_lr: 0.0005
+
+mc_dropout:
+  n_samples: 30
+  uncertainty_metric: "entropy"
+  abstention_threshold: 0.5
+
+performance_budget:
+  max_model_size_mb: 5.0
+  max_parameters: 900000
+  max_inference_time_ms: 100
+
+evaluation:
+  cv_strategy: "loso"
+  metrics: ["accuracy", "precision", "recall", "f1", "auroc", "ece", "abstention_rate"]
+
+rag_mini:
+  knowledge_base_path: "src/rag_mini/knowledge_base.json"
+  top_k: 3
+  contexts: ["wearable", "workplace", "driving", "general"]
+  intensities: ["low", "high"]

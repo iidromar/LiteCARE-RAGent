@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "intervention": "Practice 4-7-8 breathing: inhale for 4 seconds, hold for 7, exhale for 8. Repeat 3 times.",
+    "type": "breathing",
+    "stress_type": ["mental", "emotional"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Activates the parasympathetic nervous system, reducing cortisol and heart rate.",
+    "source": "Weil, A. (2015). Spontaneous Happiness. Hachette Books."
+  },
+  {
+    "id": 2,
+    "intervention": "Try box breathing: inhale 4s, hold 4s, exhale 4s, hold 4s. Used by military personnel for acute stress.",
+    "type": "breathing",
+    "stress_type": ["mental", "physical", "emotional"],
+    "context": ["wearable", "workplace", "driving", "general"],
+    "intensity": "low",
+    "evidence": "Reduces sympathetic nervous system activation and lowers EDA response.",
+    "source": "Navy SEAL stress management protocol."
+  },
+  {
+    "id": 3,
+    "intervention": "Take a 5-minute break. Step away from your screen, look at something 20 feet away for 20 seconds.",
+    "type": "break",
+    "stress_type": ["mental", "physical"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "Micro-breaks reduce cognitive fatigue and restore attentional resources (Trougakos & Hideg, 2009).",
+    "source": "Trougakos, J. P., & Hideg, I. (2009). Momentary work recovery."
+  },
+  {
+    "id": 4,
+    "intervention": "Do a 2-minute progressive muscle relaxation: tense and release your shoulders, arms, and hands.",
+    "type": "relaxation",
+    "stress_type": ["physical", "mental"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "PMR reduces musculoskeletal tension and lowers heart rate variability stress markers.",
+    "source": "Jacobson, E. (1938). Progressive Relaxation. University of Chicago Press."
+  },
+  {
+    "id": 5,
+    "intervention": "Grip the steering wheel less tightly. Roll your shoulders back and take a slow, deep breath.",
+    "type": "breathing",
+    "stress_type": ["physical", "mental"],
+    "context": ["driving"],
+    "intensity": "low",
+    "evidence": "Physical tension reduction during driving lowers reported stress and improves reaction time.",
+    "source": "Healey & Picard (2005). Detecting stress during real-world driving."
+  },
+  {
+    "id": 6,
+    "intervention": "If safe to do so, slow down your driving speed slightly. A 10% speed reduction reduces stress arousal.",
+    "type": "behavioral",
+    "stress_type": ["mental", "emotional"],
+    "context": ["driving"],
+    "intensity": "low",
+    "evidence": "Speed and stress are positively correlated in real-world driving studies.",
+    "source": "AffectiveROAD study, El Haouij et al. (2018)."
+  },
+  {
+    "id": 7,
+    "intervention": "Try a 5-4-3-2-1 grounding exercise: notice 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste.",
+    "type": "mindfulness",
+    "stress_type": ["emotional", "mental"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Grounding techniques redirect attention away from stressors and reduce anxiety (Borkovec et al., 2002).",
+    "source": "Borkovec, T. D., et al. (2002). Cognitive-behavioral therapy for generalized anxiety."
+  },
+  {
+    "id": 8,
+    "intervention": "Drink a glass of water slowly. Dehydration amplifies physiological stress responses.",
+    "type": "behavioral",
+    "stress_type": ["physical", "mental"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Even mild dehydration (1-2%) increases cortisol and perceived stress.",
+    "source": "Masento et al. (2014). Effects of hydration status on cognitive performance."
+  },
+  {
+    "id": 9,
+    "intervention": "Stand up and do 10 slow shoulder rolls. Physical movement interrupts the stress-tension cycle.",
+    "type": "movement",
+    "stress_type": ["physical", "mental"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "Brief movement breaks reduce muscle tension and improve mood (Thayer, 1996).",
+    "source": "Thayer, R. E. (1996). The Origin of Everyday Moods."
+  },
+  {
+    "id": 10,
+    "intervention": "Write down the ONE most urgent task and set a 25-minute focused timer. Clarity reduces cognitive overwhelm.",
+    "type": "cognitive",
+    "stress_type": ["mental"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "The Pomodoro technique reduces task-related stress and increases productivity.",
+    "source": "Cirillo, F. (2006). The Pomodoro Technique."
+  },
+  {
+    "id": 11,
+    "intervention": "Silently repeat a calming phrase to yourself: 'This moment will pass. I am capable.'",
+    "type": "cognitive",
+    "stress_type": ["emotional", "mental"],
+    "context": ["driving", "wearable", "general"],
+    "intensity": "low",
+    "evidence": "Positive self-talk reduces emotional reactivity and stress during challenging tasks.",
+    "source": "Hatzigeorgiadis et al. (2011). Self-talk and sports performance."
+  },
+  {
+    "id": 12,
+    "intervention": "Try a body scan: close your eyes for 60 seconds and mentally scan from your feet to your head, noting tension.",
+    "type": "mindfulness",
+    "stress_type": ["mental", "emotional", "physical"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Body scan meditation activates the parasympathetic nervous system (Kabat-Zinn, 1990).",
+    "source": "Kabat-Zinn, J. (1990). Full Catastrophe Living. Dell Publishing."
+  },
+  {
+    "id": 13,
+    "intervention": "Listen to 2 minutes of calm music (60-80 BPM). Music at resting heart rate can synchronize physiological rhythms.",
+    "type": "sensory",
+    "stress_type": ["mental", "emotional"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Music therapy reduces cortisol and promotes parasympathetic activation.",
+    "source": "Thoma et al. (2013). The effect of music on the human stress response."
+  },
+  {
+    "id": 14,
+    "intervention": "Reconsider your current priority. Ask: 'What is truly urgent vs. what feels urgent?'",
+    "type": "cognitive",
+    "stress_type": ["mental"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "Cognitive reappraisal of stressors reduces physiological arousal (Gross, 1998).",
+    "source": "Gross, J. J. (1998). Antecedent and response-focused emotion regulation."
+  },
+  {
+    "id": 15,
+    "intervention": "Take a 10-minute walk outside, even around the building. Natural light and movement significantly reduce cortisol.",
+    "type": "movement",
+    "stress_type": ["mental", "physical", "emotional"],
+    "context": ["workplace", "general"],
+    "intensity": "medium",
+    "evidence": "Outdoor walking in natural settings reduces cortisol by up to 16% (Park et al., 2010).",
+    "source": "Park, B. J., et al. (2010). The physiological effects of Shinrin-yoku."
+  },
+  {
+    "id": 16,
+    "intervention": "Diaphragmatic breathing: breathe into your belly, not your chest. 6 breaths per minute for 2 minutes.",
+    "type": "breathing",
+    "stress_type": ["physical", "mental"],
+    "context": ["wearable", "workplace", "driving", "general"],
+    "intensity": "low",
+    "evidence": "Resonance frequency breathing (6 breaths/min) maximizes HRV and reduces sympathetic tone.",
+    "source": "Lehrer & Gevirtz (2014). Heart rate variability biofeedback."
+  },
+  {
+    "id": 17,
+    "intervention": "Put on your parking brake at the next opportunity and stretch your neck gently side to side.",
+    "type": "movement",
+    "stress_type": ["physical"],
+    "context": ["driving"],
+    "intensity": "low",
+    "evidence": "Neck and shoulder tension is a known correlate of driving stress.",
+    "source": "Cardiovascular effects of driving stress research."
+  },
+  {
+    "id": 18,
+    "intervention": "Focus on one email or task at a time. Close other tabs. Multitasking increases cortisol by 15%.",
+    "type": "cognitive",
+    "stress_type": ["mental"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "Task-switching and interruptions increase stress and reduce performance.",
+    "source": "SWELL-KW study (Koldijk et al., 2014)."
+  },
+  {
+    "id": 19,
+    "intervention": "Acknowledge the stressor out loud or in writing: 'I am stressed because ___.' Labeling reduces amygdala activation.",
+    "type": "cognitive",
+    "stress_type": ["emotional", "mental"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Affect labeling reduces neural stress responses (Lieberman et al., 2007).",
+    "source": "Lieberman, M. D., et al. (2007). Putting feelings into words."
+  },
+  {
+    "id": 20,
+    "intervention": "Set a realistic expectation for the next 30 minutes. Lower the bar slightly — done is better than perfect.",
+    "type": "cognitive",
+    "stress_type": ["mental"],
+    "context": ["workplace"],
+    "intensity": "low",
+    "evidence": "Perfectionism is a significant predictor of work-related stress.",
+    "source": "Flett & Hewitt (2002). Perfectionism and maladjustment."
+  },
+  {
+    "id": 21,
+    "intervention": "Try alternate nostril breathing: close right nostril, inhale left 4s, switch, exhale right 4s. Repeat 5 cycles.",
+    "type": "breathing",
+    "stress_type": ["mental", "emotional"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Nadi Shodhana pranayama reduces sympathetic activity and improves EDA metrics.",
+    "source": "Telles et al. (2013). Alternate nostril yoga breathing."
+  },
+  {
+    "id": 22,
+    "intervention": "Hydrate and have a light snack if it has been more than 3 hours since eating. Blood sugar drops amplify stress.",
+    "type": "behavioral",
+    "stress_type": ["physical", "mental"],
+    "context": ["wearable", "workplace", "general"],
+    "intensity": "low",
+    "evidence": "Hypoglycemia activates the sympathetic nervous system and increases cortisol.",
+    "source": "McEwen, B. S. (2007). Physiology and neurobiology of stress."
+  },
+  {
+    "id": 23,
+    "intervention": "Open a window or step outside briefly. Fresh air and a brief change of environment can reset focus.",
+    "type": "behavioral",
+    "stress_type": ["mental", "physical"],
+    "context": ["workplace", "general"],
+    "intensity": "low",
+    "evidence": "Environmental changes interrupt rumination cycles.",
+    "source": "Attention Restoration Theory (Kaplan, 1995)."
+  },
+  {
+    "id": 24,
+    "intervention": "Postpone non-urgent decisions for 30 minutes. Decision fatigue amplifies perceived stress.",
+    "type": "cognitive",
+    "stress_type": ["mental"],
+    "context": ["workplace", "general"],
+    "intensity": "low",
+    "evidence": "Decision fatigue is linked to cortisol elevation (Hagger et al., 2010).",
+    "source": "Hagger, M. S., et al. (2010). Ego depletion and the strength model of self-control."
+  }
+]
