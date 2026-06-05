@@ -1,6 +1,6 @@
 # LiteCARE-RAGent
 
-A lightweight wearable stress detection system combining a Multi-Scale Temporal Convolutional Network with Squeeze-and-Excitation attention (LiteTCNSE), Monte Carlo Dropout uncertainty estimation, and a retrieval-augmented intervention agent.
+A lightweight wearable stress detection system combining a Multi Scale Temporal Convolutional Network with Squeeze and Excitation attention (LiteTCNSE), Monte Carlo Dropout uncertainty estimation, and a retrieval augmented intervention agent.
 
 **319,138 parameters · 1.29 MB FP32 · 8.2 ms single-thread CPU inference (Apple M4 Pro, arm64)**
 
@@ -23,9 +23,9 @@ Concat with HRV projection [B, 32]  ←  12 HRV features
 Linear(288, 2)  →  logits
 ```
 
-MC-Dropout (N=30 passes) produces a distribution over predictions; predictive entropy drives an abstention rule: windows with entropy above threshold τ are withheld rather than misclassified.
+MC Dropout (N=30 passes) produces a distribution over predictions, predictive entropy drives an abstention rule: windows with entropy above threshold τ are withheld rather than misclassified.
 
-The RAG-Mini agent retrieves context-appropriate stress interventions from a local knowledge base using tag-based scoring (no LLM required).
+The RAG Mini agent retrieves context-appropriate stress interventions from a local knowledge base using tag-based scoring (no LLM required).
 
 ---
 
