@@ -1,8 +1,7 @@
 data:
   wesad_root: "data/raw/WESAD"
   affectiveroad_root: "data/raw/AffectiveROAD_Data"
-  swell_root: "data/raw/SWELL"
-  empatica_root: "data/raw/EmpaticaE4Stress"
+empatica_root: "data/raw/EmpaticaE4Stress"
   processed_dir: "data/processed"
   target_fs: 32
   bvp_channel_idx: 1

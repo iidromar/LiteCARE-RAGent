@@ -45,7 +45,6 @@ Download each dataset and place under `data/raw/` following the structure below:
 data/raw/
 ├── WESAD/            ← S2/, S3/, ..., S17/
 ├── AffectiveROAD_Data/
-├── SWELL/
 └── EmpaticaE4Stress/
 ```
 
@@ -59,7 +58,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Tested on Python 3.9+ with PyTorch 2.8. ONNX Runtime is optional (for `16_device_benchmark.py`).
+Tested on Python 3.9+ with PyTorch 2.8. ONNX Runtime is optional (for `15_device_benchmark.py`).
 
 ---
 
@@ -70,8 +69,7 @@ Tested on Python 3.9+ with PyTorch 2.8. ONNX Runtime is optional (for `16_device
 ```bash
 python scripts/01_preprocess_wesad.py
 python scripts/02_preprocess_affectiveroad.py
-python scripts/03_preprocess_swell.py
-python scripts/04_preprocess_empatica.py
+python scripts/03_preprocess_empatica.py
 ```
 
 Each script reads from `data/raw/` and writes windowed `.npz` files to `data/processed/`.
@@ -79,7 +77,7 @@ Each script reads from `data/raw/` and writes windowed `.npz` files to `data/pro
 ### 2 — Train (LOSO cross-validation on WESAD)
 
 ```bash
-python scripts/05_train.py --config config/config.yaml --out results/wesad_loso
+python scripts/04_train.py --config config/config.yaml --out results/wesad_loso
 ```
 
 Trains one fold per subject. Checkpoints saved as `results/wesad_loso/full_fold_<subject>.pt`.
@@ -87,7 +85,7 @@ Trains one fold per subject. Checkpoints saved as `results/wesad_loso/full_fold_
 ### 3 — Full evaluation
 
 ```bash
-python scripts/09_full_evaluation.py --config config/config.yaml
+python scripts/08_full_evaluation.py --config config/config.yaml
 ```
 
 Runs all baselines (RF, BiLSTM, DilatedCNN, XGBoost, MiniRocket, InceptionTime) and the main model under identical LOSO protocol. Produces `results/full_evaluation_table.csv`.
@@ -95,14 +93,14 @@ Runs all baselines (RF, BiLSTM, DilatedCNN, XGBoost, MiniRocket, InceptionTime) 
 ### 4 — Cross-dataset transfer
 
 ```bash
-python scripts/06_cross_dataset_eval.py   # WESAD → AffectiveROAD
-python scripts/12_cross_dataset_empatica.py  # WESAD → EmpaticaE4Stress
+python scripts/05_cross_dataset_eval.py   # WESAD → AffectiveROAD
+python scripts/11_cross_dataset_empatica.py  # WESAD → EmpaticaE4Stress
 ```
 
 ### 5 — Ablation study
 
 ```bash
-python scripts/07_ablation_study.py --config config/config.yaml
+python scripts/06_ablation_study.py --config config/config.yaml
 ```
 
 Trains and evaluates `full`, `no_se`, and `fixed_dilation` variants.
@@ -110,7 +108,7 @@ Trains and evaluates `full`, `no_se`, and `fixed_dilation` variants.
 ### 6 — MC-Dropout abstention evaluation
 
 ```bash
-python scripts/11_abstention_eval.py
+python scripts/10_abstention_eval.py
 ```
 
 Calibrates per-fold τ and reports F1 before/after abstention.
@@ -118,13 +116,13 @@ Calibrates per-fold τ and reports F1 before/after abstention.
 ### 7 — GradCAM saliency
 
 ```bash
-python scripts/13_gradcam.py
+python scripts/12_gradcam.py
 ```
 
 ### 8 — Device benchmark
 
 ```bash
-python scripts/16_device_benchmark.py
+python scripts/15_device_benchmark.py
 ```
 
 Reports FP32 / INT8 / ONNX Runtime latency (500 timed iterations, 30 warmup). Must be run on the target device; ARM measurements require ARM hardware.
@@ -160,25 +158,23 @@ print(result.summary())
 ├── notebooks/
 │   ├── 01_eda_wesad.ipynb
 │   ├── 02_eda_affectiveroad.ipynb
-│   ├── 03_eda_swell.ipynb
-│   └── 04_results_analysis.ipynb
+│   └── 03_results_analysis.ipynb
 ├── scripts/
 │   ├── 01_preprocess_wesad.py
 │   ├── 02_preprocess_affectiveroad.py
-│   ├── 03_preprocess_swell.py
-│   ├── 04_preprocess_empatica.py
-│   ├── 05_train.py
-│   ├── 06_cross_dataset_eval.py
-│   ├── 07_ablation_study.py
-│   ├── 08_rf_baseline.py
-│   ├── 09_full_evaluation.py
-│   ├── 10_window_sensitivity.py
-│   ├── 11_abstention_eval.py
-│   ├── 12_cross_dataset_empatica.py
-│   ├── 13_gradcam.py
-│   ├── 14_calibration.py
-│   ├── 15_baselines.py
-│   └── 16_device_benchmark.py
+│   ├── 03_preprocess_empatica.py
+│   ├── 04_train.py
+│   ├── 05_cross_dataset_eval.py
+│   ├── 06_ablation_study.py
+│   ├── 07_rf_baseline.py
+│   ├── 08_full_evaluation.py
+│   ├── 09_window_sensitivity.py
+│   ├── 10_abstention_eval.py
+│   ├── 11_cross_dataset_empatica.py
+│   ├── 12_gradcam.py
+│   ├── 13_calibration.py
+│   ├── 14_baselines.py
+│   └── 15_device_benchmark.py
 ├── src/
 │   ├── evaluation/          ← metrics, cross-eval, ablation eval
 │   ├── models/
